@@ -5,6 +5,7 @@ import numpy as np
 import requests
 from io import BytesIO
 import json
+from PIL import Image
 
 # Create your views here.
 def candi_image_scan(request):
