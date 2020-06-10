@@ -1,2 +1,1 @@
 web: gunicorn candi_scan.wsgi --log-file -
-web: python candi_scan/manage.py runserver 0.0.0.0:$PORT
