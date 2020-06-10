@@ -2,7 +2,4 @@ Django
 gunicorn
 numpy
 request
-json
-os
-sys
 django-heroku
