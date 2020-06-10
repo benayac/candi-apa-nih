@@ -4,8 +4,7 @@ from django.conf.urls.static import static
 from scanner.views import *
 
 urlpatterns = [
-    path('image_upload', candi_image_scan, name = 'image_upload'), 
-    path('success', success, name = 'success'), 
+    path('', candi_image_scan, name = 'image_upload'),
 ]
 
 if settings.DEBUG: 

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from . import forms
 import numpy as np
-from PIL import Image
 import requests
 from io import BytesIO
 import json
