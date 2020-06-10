@@ -26,7 +26,7 @@ def image_process(url):
     response = requests.get(url)
     img = Image.open(BytesIO(response.content))
     b, g, r = img.split()
-    img = np.asarray(Image.merge("BGR", (r, g, b)))
+    img = np.asarray(Image.merge("RGB", (r, g, b)))
     return img
 
 def make_prediction(data):
