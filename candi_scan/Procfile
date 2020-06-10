@@ -1,0 +1,1 @@
+web: gunicorn candi_scan.wsgi --log-file -
