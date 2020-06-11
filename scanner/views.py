@@ -16,8 +16,8 @@ def candi_image_scan(request):
     if form.is_valid():
         if(form.cleaned_data.get('candi_url') is not None):
             data = image_process_from_url(form.cleaned_data.get('candi_url'))
-            text = make_prediction(data)
-        return render(request, 'index.html', {'form':form, 'code':text})
+            text, confidence = make_prediction(data)
+        return render(request, 'index.html', {'form':form, 'code':text, 'confidence':confidence})
     else:
         form = forms.CandiForm()
         return render(request, 'index.html', {'form':form})
@@ -45,5 +45,5 @@ def make_prediction(data):
     resp = requests.post(scoring_uri, input_data, headers=headers)
     prediction = json.loads(resp.text)["result"]
     class_names = ['Candi Borobudur', 'Candi Brahu', 'Candi Mendut', 'Candi Prambanan']
-    #return class_names[np.argmax(prediction)]
-    return resp.text
+    confidence = int(max(prediction)*100)
+    return class_names[np.argmax(prediction)], confidence
