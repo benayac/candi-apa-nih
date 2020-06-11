@@ -45,4 +45,5 @@ def make_prediction(data):
     resp = requests.post(scoring_uri, input_data, headers=headers)
     prediction = json.loads(resp.text)["result"]
     class_names = ['Candi Borobudur', 'Candi Brahu', 'Candi Mendut', 'Candi Prambanan']
-    return class_names[np.argmax(prediction)]
+    #return class_names[np.argmax(prediction)]
+    return resp.text
