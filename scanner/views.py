@@ -33,7 +33,7 @@ def image_process_file(img_file):
 
 def image_process_from_url(url):
     response = requests.get(url)
-    img = img_to_array(load_img(BytesIO(response.content)).resize((224, 224)))
+    img = img_to_array(load_img(BytesIO(response.content)))
     img = preprocess_input(img)
     img = np.array(img, dtype='float32')
     return img
