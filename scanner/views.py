@@ -40,7 +40,7 @@ def image_process_from_url(url):
     return img
 
 def make_prediction(data):
-    scoring_uri = "http://784740cf-b174-41c2-a514-547956c27618.eastus2.azurecontainer.io/score"
+    scoring_uri = "http://6a6d2e5e-3c51-4fe4-987b-8dc6cfc45030.eastus2.azurecontainer.io/score"
     input_data = json.dumps({"data":data.tolist()})
     headers = {'Content-Type':'application/json'}
     resp = requests.post(scoring_uri, input_data, headers=headers)
