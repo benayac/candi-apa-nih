@@ -6,4 +6,7 @@ class CandiForm(forms.ModelForm):
 
 	class Meta: 
 		model = Candi 
-		fields = ['candi_url', 'candi_img'] 
+		fields = [
+			'candi_url',
+			#'candi_img'
+				] 

@@ -3,12 +3,70 @@
 <head> 
 	<meta charset="UTF-8"> 
 	<title>Candi Apa Nih</title> 
+	<link rel="stylesheet" href="/scanner{{ STATIC_URL }}style.css">
 </head> 
+<style>
+html {
+scroll-behavior: smooth;
+min-height:100%;
+background: linear-gradient(0deg, rgba(246,79,89, 0.8), rgba(196,113,237, 0.8)),
+	url("https://i.pinimg.com/originals/a0/11/d6/a011d6e3597dca8d7dac3f5451da3348.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+form{
+  margin: auto;
+  width: 50%;
+  background-color:red;
+}
+
+button{
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #7F7FD5;
+  color: white;
+}
+
+button:hover{
+  background-color: #86A8E7;
+  transition: 0.3s;
+}
+
+.title{
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.result{
+  margin: auto;
+  width: 50%;
+  background-color: yellow;
+}
+
+p{
+	text-align: center;
+}
+
+</style>
 <body> 
-	<form method = "post" enctype="multipart/form-data"> 
-		{% csrf_token %} 
-		{{ form.as_p }} 
-		<button type="submit">Upload</button> 
-	</form> 
-</body> 
+	<h1 class="title">Candi Apa Nih????<br>TANYA ROBOTNYA BENAYA YUKKKK</h1>
+	  <form method = "post" enctype="multipart/form-data"> 
+		  {% csrf_token %} 
+		  {{ form.as_p }} 
+		  <button type="submit">Upload</button> 
+	  </form> 
+	<br>
+   <div class="result">
+	 <img src="{{image}}">
+	  <p>This is {{code}}</p><br>
+	 <p>nih benaya kasih tau soal candi ini<br>
+	   {{code}}
+	 </p>
+	</div>
+  </body> 
+  </html> 
 </html> 
