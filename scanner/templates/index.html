@@ -18,7 +18,6 @@ background-size: cover;
 form{
   margin: auto;
   width: 50%;
-  background-color:red;
 }
 
 button{
@@ -31,6 +30,9 @@ button{
   color: white;
 }
 
+.btn{
+  text-align: center;
+}
 button:hover{
   background-color: #86A8E7;
   transition: 0.3s;
@@ -44,7 +46,6 @@ button:hover{
 .result{
   margin: auto;
   width: 50%;
-  background-color: yellow;
 }
 
 p{
@@ -53,7 +54,7 @@ p{
 
 </style>
 <body> 
-	<h1 class="title">Candi Apa Nih????<br>TANYA ROBOTNYA BENAYA YUKKKK</h1>
+	<h1 class="title">Candi Apa Nih?<br>Ayo belajar mengenali candi di Indonesia!</h1>
 	  <form method = "post" enctype="multipart/form-data"> 
 		  {% csrf_token %} 
 		  {{ form.as_p }} 
@@ -62,9 +63,7 @@ p{
 	<br>
    <div class="result">
 	 <img src="{{image}}">
-	  <p>I'm {{confidence}}% sure that this is {{code}}.</p><br>
-	 <p>nih benaya kasih tau soal candi ini<br>
-	   {{code}}
+	  <p>Aku {{confidence}}% yakin kalo ini candi {{code}}.</p><br>
 	 </p>
 	</div>
   </body> 
