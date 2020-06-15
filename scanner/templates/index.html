@@ -57,14 +57,18 @@ p{
 	<h1 class="title">Candi Apa Nih?<br>Ayo belajar mengenali candi di Indonesia!</h1>
 	  <form method = "post" enctype="multipart/form-data"> 
 		  {% csrf_token %} 
-		  {{ form.as_p }} 
-		  <button type="submit">Upload</button> 
+      {{ form.as_p }} 
+      <div class="btn">
+      <button type="submit">Upload</button> 
+      </div>
 	  </form> 
-	<br>
+  <br>
+  {%if code != null%}
    <div class="result">
 	 <img src="{{image}}">
-	  <p>Aku {{confidence}}% yakin kalo ini candi {{code}}.</p><br>
-	 </p>
+	  <p>Aku {{confidence}}% yakin kalo ini Candi {{code}}.</p><br>
+   </p>
+   {%endif%}
 	</div>
   </body> 
   </html> 

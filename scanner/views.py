@@ -44,7 +44,7 @@ def make_prediction(data):
     headers = {'Content-Type':'application/json'}
     resp = requests.post(scoring_uri, input_data, headers=headers)
     prediction = json.loads(resp.text)["result"]
-    class_names = ['candi_banyunibo', 'candi_borobudur', 'candi_brahu', 'candi_cangkuang', 'candi_dieng', 'candi_jabung', 'candi_jago', 
-    'candi_kalasan', 'candi_mendut', 'candi_muara_takus', 'candi_padas', 'candi_pawon', 'candi_prambanan', 'candi_sambisari', 'candi_sari_', 'candi_sewu']
+    class_names = ['Banyunibo', 'Borobudur', 'Brahu', 'Cangkuang', 'Dieng', 'Jabung', 'Jago', 
+    'Kalasan', 'Mendut', 'Muara Takus', 'Padas', 'Pawon', 'Prambanan', 'Sambisari', 'Sari', 'Sewu']
     confidence = int(max(prediction)*100)
     return class_names[np.argmax(prediction)], confidence
