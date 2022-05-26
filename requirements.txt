@@ -4,4 +4,4 @@ numpy
 requests
 django-heroku
 Pillow
-tensorflow==2.0.1
+tensorflow==2.7.2
